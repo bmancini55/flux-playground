@@ -1,14 +1,14 @@
 
+let xhr = require('superagent');
 
 module.exports = {
 
   getRestaurants: function(callback) {
-    callback(null, [
-      { name: 'Betos' },
-      { name: 'Mineos' },
-      { name: 'Uncle Sams' },
-      { name: 'McSloppies' }
-    ]);
+    xhr
+      .get('/api/restaurants')
+      .end(function(err, result) {
+        callback(err, result.body);
+      });
   }
 
 };

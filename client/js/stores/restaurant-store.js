@@ -11,6 +11,10 @@ let instance = Object.assign({}, EventEmitter.prototype, {
       switch(action.type) {
         case 'restaurants_get_success':
           this.onGetRestaurantsSuccess(action.payload);
+          break;
+        case 'restaurants_get_error':
+          console.log('Loading error: ' + action.error);
+          break;
       };
     });
 
