@@ -15,7 +15,7 @@ let instance = Object.assign({}, EventEmitter.prototype, {
         case 'restaurants_get_error':
           console.log('Loading error: ' + action.error);
           break;
-      };
+      }
     });
 
   },

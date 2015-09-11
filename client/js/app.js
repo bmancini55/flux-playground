@@ -1,11 +1,5 @@
 
-let restaurantActions = require('./actions/restaurant-actions');
-let restaurantStore = require('./stores/restaurant-store');
+let React          = require('react');
+let RestaurantList = require('./components/restaurant-list.jsx');
 
-restaurantStore.register(function() {
-
-  console.log(restaurantStore.getState());
-
-});
-
-restaurantActions.getRestaurants();
+React.render(<RestaurantList />, document.getElementById('app'));
