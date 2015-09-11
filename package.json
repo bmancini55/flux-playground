@@ -4,8 +4,14 @@
   "description": "Testing flux pattern with backbone and jade",
   "main": "index.js",
   "scripts": {
-    "watch": "watchify -o client/js/bundle.js -v -d client/js/app.js",
-    "build": "browserify -o client/js/bundle.js -v -d client/js/app.js",
+    "watch": "npm run watch-client & npm run watch-jade",
+    "watch-client": "watchify -o client/js/bundle.js -v -d client/js/app.js",
+    "watch-jade": "jade --watch --client client/js --out client/jade",
+
+    "build": "npm run build-client & npm run build-jade",
+    "build-client": "browserify -o client/js/bundle.js -v -d client/js/app.js",
+    "build-jade": "jade --client client/js --out client/jade",
+
     "start": "NODE_PATH=./ node index.js"
   },
   "author": "Brian <bmancini@gmail.com>",
@@ -26,6 +32,7 @@
     "babel-eslint": "^4.0.5",
     "babelify": "^6.1.3",
     "browserify": "^11.0.1",
+    "jade": "^1.11.0",
     "reactify": "^1.1.1",
     "watchify": "^3.3.1"
   },
