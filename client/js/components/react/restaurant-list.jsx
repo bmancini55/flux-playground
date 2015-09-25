@@ -1,7 +1,7 @@
 
 let React             = require('react');
-let restaurantStore   = require('../stores/restaurant-store');
-let restaurantActions = require('../actions/restaurant-actions');
+let restaurantStore   = require('../../stores/restaurant-store');
+let restaurantActions = require('../../actions/restaurant-actions');
 
 module.exports = React.createClass({
 
